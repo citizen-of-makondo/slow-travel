@@ -1,0 +1,77 @@
+/* Design tokens — Slow Travel
+   Direction: warm editorial / Balkan paper-and-pine.
+   Palette anchors: deep pine green (their 💚), fired clay, bone paper. */
+
+:root {
+  /* Surfaces */
+  --color-paper: oklch(96.5% 0.014 85);
+  --color-paper-deep: oklch(93% 0.02 82);
+  --color-ink: oklch(21% 0.024 155);
+  --color-ink-soft: oklch(38% 0.02 155);
+  --color-muted: oklch(52% 0.016 150);
+
+  /* Brand */
+  --color-pine: oklch(44% 0.085 155);
+  --color-pine-bright: oklch(58% 0.115 152);
+  --color-clay: oklch(58% 0.135 45);
+  /* Тот же терракотовый, но затемнённый до 4.5:1 на бумаге — для мелкого текста.
+     Светлый вариант остаётся для декора: солнца, рамок, стрелок. */
+  --color-clay-text: oklch(48% 0.145 42);
+  --color-gold: oklch(78% 0.115 82);
+
+  /* Semantic status — tuned to clear 4.5:1 on the ink section they live in */
+  --status-open: oklch(74% 0.13 152);
+  --status-few: oklch(74% 0.13 55);
+  --status-none: oklch(70% 0.008 150);
+
+  /* Lines & fills */
+  --rule: color-mix(in oklch, var(--color-ink) 16%, transparent);
+  --rule-strong: color-mix(in oklch, var(--color-ink) 34%, transparent);
+  --surface-raise: oklch(99% 0.008 85);
+  --shadow-soft: 0 1px 2px oklch(21% 0.024 155 / 0.05),
+    0 12px 32px -18px oklch(21% 0.024 155 / 0.35);
+  --shadow-lift: 0 2px 4px oklch(21% 0.024 155 / 0.06),
+    0 28px 60px -26px oklch(21% 0.024 155 / 0.45);
+
+  /* Type scale — fluid */
+  --font-display: "Cormorant Garamond", "Iowan Old Style", Georgia, serif;
+  --font-body: "Manrope", "Helvetica Neue", system-ui, sans-serif;
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: clamp(1rem, 0.95rem + 0.22vw, 1.125rem);
+  --text-lead: clamp(1.15rem, 1.02rem + 0.55vw, 1.5rem);
+  --text-h3: clamp(1.4rem, 1.2rem + 0.9vw, 2rem);
+  --text-h2: clamp(2rem, 1.4rem + 2.6vw, 3.75rem);
+  --text-hero: clamp(2.9rem, 1.4rem + 6.2vw, 6.75rem);
+
+  --tracking-caps: 0.14em;
+  --leading-tight: 1.04;
+  --leading-body: 1.62;
+
+  /* Space */
+  --space-3xs: 0.25rem;
+  --space-2xs: 0.5rem;
+  --space-xs: 0.75rem;
+  --space-s: 1rem;
+  --space-m: 1.5rem;
+  --space-l: 2.5rem;
+  --space-xl: 4rem;
+  --space-section: clamp(4.5rem, 3rem + 6vw, 10rem);
+
+  --measure: 62ch;
+  --shell: 78rem;
+  --shell-gutter: clamp(1.25rem, 0.6rem + 3vw, 4rem);
+
+  /* Motion */
+  --duration-fast: 160ms;
+  --duration-normal: 320ms;
+  --duration-slow: 780ms;
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-soft: cubic-bezier(0.33, 0.9, 0.24, 1);
+
+  /* Radius — deliberately uneven: cards are near-square, pills are full */
+  --radius-card: 3px;
+  --radius-media: 2px;
+  --radius-pill: 999px;
+}

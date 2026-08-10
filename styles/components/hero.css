@@ -1,0 +1,190 @@
+/* Hero — layered ridgeline, oversized display type, editorial meta strip */
+
+.hero {
+  position: relative;
+  isolation: isolate;
+  padding-block: clamp(2rem, 1rem + 3vw, 4rem) 0;
+  overflow: hidden;
+}
+
+.hero::after {
+  /* warm light pooling behind the type */
+  content: "";
+  position: absolute;
+  inset-inline: -20%;
+  top: -30%;
+  height: 90%;
+  z-index: -2;
+  background: radial-gradient(
+    50% 55% at 50% 50%,
+    color-mix(in oklch, var(--color-gold) 34%, transparent),
+    transparent 70%
+  );
+}
+
+.hero__inner {
+  display: grid;
+  gap: var(--space-l);
+}
+
+.hero__kicker {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-s) var(--space-m);
+  justify-content: space-between;
+  border-block-end: 1px solid var(--rule);
+  padding-block-end: var(--space-s);
+}
+
+.hero__where {
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-caps);
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+
+.hero__title {
+  font-size: var(--text-hero);
+  letter-spacing: -0.03em;
+  margin-block: clamp(0.5rem, 1vw, 1.5rem);
+}
+
+.hero__title span {
+  display: block;
+}
+
+.hero__title .indent {
+  padding-inline-start: clamp(0rem, -2rem + 14vw, 9rem);
+}
+
+.hero__title em {
+  font-style: italic;
+  color: var(--color-pine);
+}
+
+.hero__body {
+  display: grid;
+  gap: var(--space-m);
+  align-items: start;
+}
+
+@media (width >= 56rem) {
+  .hero__body {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+    gap: var(--space-xl);
+  }
+}
+
+.hero__stats {
+  display: grid;
+  gap: var(--space-s);
+  border-block-start: 1px solid var(--rule);
+  padding-block-start: var(--space-s);
+}
+
+.hero__stat {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-xs);
+}
+
+.hero__stat dt {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  color: var(--color-pine);
+}
+
+.hero__stat dd {
+  margin: 0;
+  font-size: var(--text-sm);
+  color: var(--color-ink-soft);
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-s);
+  margin-block-start: var(--space-m);
+}
+
+/* Ridgeline illustration */
+.ridge {
+  width: 100%;
+  margin-block-start: clamp(1.5rem, 4vw, 3.5rem);
+  color: var(--color-pine);
+}
+
+.ridge__layer {
+  transform-origin: bottom;
+}
+
+.ridge__layer--far {
+  fill: color-mix(in oklch, var(--color-pine) 22%, var(--color-paper));
+}
+
+.ridge__layer--mid {
+  fill: color-mix(in oklch, var(--color-pine) 48%, var(--color-paper));
+}
+
+.ridge__layer--near {
+  fill: color-mix(in oklch, var(--color-pine) 55%, var(--color-ink));
+}
+
+.ridge__sun {
+  fill: var(--color-clay);
+}
+
+/* Marquee of place names, running along the fold */
+.strip {
+  border-block: 1px solid var(--rule);
+  background: var(--color-paper-deep);
+  overflow: hidden;
+  padding-block: var(--space-xs);
+}
+
+.strip__track {
+  display: flex;
+  width: max-content;
+  gap: var(--space-l);
+  animation: strip-scroll 46s linear infinite;
+}
+
+.strip:hover .strip__track {
+  animation-play-state: paused;
+}
+
+.strip__item {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-l);
+  font-family: var(--font-display);
+  font-size: clamp(1.1rem, 0.9rem + 0.6vw, 1.6rem);
+  font-style: italic;
+  color: var(--color-ink-soft);
+  white-space: nowrap;
+}
+
+.strip__item::after {
+  content: "✦";
+  font-style: normal;
+  font-size: 0.55em;
+  color: var(--color-clay);
+}
+
+@keyframes strip-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .strip__track {
+    animation: none;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+}

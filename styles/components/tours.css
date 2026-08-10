@@ -1,0 +1,160 @@
+/* Tours — editorial index rows that expand into cards on hover/focus */
+
+.tour {
+  display: grid;
+  gap: var(--space-s) var(--space-m);
+  grid-template-columns: minmax(0, 1fr);
+  padding-block: var(--space-l);
+  border-block-end: 1px solid color-mix(in oklch, var(--color-paper) 22%, transparent);
+  position: relative;
+  transition: background-color var(--duration-normal) var(--ease-soft);
+}
+
+@media (width >= 56rem) {
+  .tour {
+    grid-template-columns: 3.5rem 10rem minmax(0, 1fr) minmax(0, 1.15fr) auto;
+    align-items: center;
+    padding-inline: var(--space-m);
+    margin-inline: calc(var(--space-m) * -1);
+  }
+
+  .tour:hover,
+  .tour:focus-within {
+    background: color-mix(in oklch, var(--color-paper) 8%, transparent);
+  }
+}
+
+.tour__index {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  color: var(--color-gold);
+}
+
+.tour__media {
+  overflow: hidden;
+  border-radius: var(--radius-media);
+  aspect-ratio: 3 / 2;
+  background: color-mix(in oklch, var(--color-paper) 12%, transparent);
+}
+
+.tour__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.001);
+  transition: transform var(--duration-slow) var(--ease-out-expo),
+    filter var(--duration-slow) var(--ease-soft);
+  filter: saturate(0.85);
+}
+
+.tour:hover .tour__media img,
+.tour:focus-within .tour__media img {
+  transform: scale(1.06);
+  filter: saturate(1);
+}
+
+@media (width < 56rem) {
+  /* Photo leads the card on narrow screens; the index number follows it */
+  .tour__media {
+    order: -1;
+    margin-block-end: var(--space-2xs);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tour__media img {
+    transition: none;
+  }
+
+  .tour:hover .tour__media img {
+    transform: none;
+  }
+}
+
+.tour__title {
+  font-size: var(--text-h3);
+}
+
+.tour__title a {
+  text-decoration: none;
+}
+
+.tour__title a::after {
+  /* full-row hit area without wrapping the whole row in an anchor */
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+.tour__dates {
+  display: block;
+  margin-block-start: var(--space-3xs);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  letter-spacing: var(--tracking-caps);
+  text-transform: uppercase;
+  color: var(--color-gold);
+}
+
+.tour__detail {
+  color: color-mix(in oklch, var(--color-paper) 72%, transparent);
+  font-size: var(--text-sm);
+  line-height: 1.55;
+  max-width: 46ch;
+}
+
+.tour__status {
+  display: inline-flex;
+  justify-self: start;
+  align-items: center;
+  gap: var(--space-2xs);
+  padding: 0.4em 0.9em;
+  border-radius: var(--radius-pill);
+  border: 1px solid currentColor;
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+}
+
+.tour__status::before {
+  content: "";
+  width: 0.45em;
+  height: 0.45em;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.tour__status[data-status="open"] {
+  color: var(--status-open);
+}
+
+.tour__status[data-status="few"] {
+  color: var(--status-few);
+}
+
+.tour__status[data-status="none"] {
+  color: var(--status-none);
+  border-style: dashed;
+}
+
+.tour__status[data-status="none"]::before {
+  background: transparent;
+  box-shadow: inset 0 0 0 1px currentColor;
+}
+
+.tours__note {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-m);
+  margin-block-start: var(--space-l);
+  color: color-mix(in oklch, var(--color-paper) 70%, transparent);
+  font-size: var(--text-sm);
+}
+
+.section--ink .btn--ghost {
+  color: var(--color-paper);
+  border-color: color-mix(in oklch, var(--color-paper) 38%, transparent);
+}

@@ -1,0 +1,122 @@
+/* Улитка, ползущая по линейке под верхней строкой героя.
+   Один проход — 300s. Трейл растёт тем же таймингом, поэтому след
+   всегда заканчивается ровно под улиткой. */
+
+.crawler {
+  --crawl-duration: 120s;
+  /* Отрицательная задержка: к моменту загрузки улитка уже выползла из-за
+     левого края, а не ждёт своей минуты за кадром. */
+  --crawl-head-start: -7s;
+
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  height: 1.75rem;
+  pointer-events: none;
+  z-index: 0;
+  /* Обёртка улитки шириной с контейнер уезжает вправо вместе с ней —
+     без обрезки это давало горизонтальную прокрутку на узких экранах. */
+  overflow: hidden;
+}
+
+.crawler__trail {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  transform-origin: left center;
+  transform: scaleX(0);
+  border-radius: var(--radius-pill);
+  background: linear-gradient(
+    to right,
+    transparent,
+    color-mix(in oklch, var(--color-pine) 12%, transparent) 35%,
+    color-mix(in oklch, var(--color-pine) 34%, transparent)
+  );
+  animation: crawl-trail var(--crawl-duration) linear var(--crawl-head-start) infinite;
+}
+
+/* Обёртка шириной с контейнер: translateX(100%) = ровно один проход,
+   без vw-хаков и без зависимости от ширины экрана. */
+.crawler__snail {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  color: var(--color-pine);
+  animation: crawl-across var(--crawl-duration) linear var(--crawl-head-start) infinite;
+}
+
+.crawler__svg {
+  display: block;
+  width: clamp(1.4rem, 1.2rem + 0.6vw, 1.85rem);
+  height: auto;
+  /* Дыхание: раковина чуть качается, пока улитка ползёт */
+  animation: crawl-bob 7s ease-in-out infinite;
+  transform-origin: 70% 100%;
+}
+
+/* Появление и уход по краям прячут момент перезапуска цикла */
+@keyframes crawl-across {
+  0% {
+    transform: translateX(-2.5rem);
+    opacity: 0;
+  }
+  1% {
+    opacity: 1;
+  }
+  96% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+/* Сдвиг влево на 1.8rem: улитка стартует на -2.5rem, поэтому без него
+   след убегал бы вперёд неё. Так его кончик остаётся под ногой. */
+@keyframes crawl-trail {
+  0% {
+    transform: translateX(-1.05rem) scaleX(0);
+    opacity: 0;
+  }
+  1% {
+    opacity: 1;
+  }
+  96% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-1.05rem) scaleX(1);
+    opacity: 0;
+  }
+}
+
+@keyframes crawl-bob {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-1px) rotate(-1.2deg);
+  }
+}
+
+/* Без движения улитка просто сидит на линейке — она всё-таки часть картинки */
+@media (prefers-reduced-motion: reduce) {
+  .crawler__snail,
+  .crawler__svg,
+  .crawler__trail {
+    animation: none;
+  }
+
+  .crawler__snail {
+    transform: translateX(18%);
+  }
+
+  .crawler__trail {
+    transform: scaleX(0.18);
+  }
+}

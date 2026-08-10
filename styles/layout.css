@@ -1,0 +1,182 @@
+/* Shell, section rhythm, shared editorial primitives */
+
+.shell {
+  width: 100%;
+  max-width: var(--shell);
+  margin-inline: auto;
+  padding-inline: var(--shell-gutter);
+}
+
+.section {
+  padding-block: var(--space-section);
+  position: relative;
+}
+
+/* Rhythm is intentionally uneven: the journal sits tighter against the tours */
+.section--tight {
+  padding-block-start: clamp(2rem, 1rem + 3vw, 4rem);
+}
+
+/* Секция перед закрывающей: её нижний отступ отдан следующей, иначе
+   два --space-section складываются в разрыв, а не в паузу. */
+.section--flush-end {
+  padding-block-end: clamp(1.5rem, 0.5rem + 2vw, 3rem);
+}
+
+.section--ink {
+  background: var(--color-ink);
+  color: var(--color-paper);
+}
+
+.section--ink .eyebrow {
+  color: var(--color-gold);
+}
+
+.section--ink .section-head__rule {
+  background: color-mix(in oklch, var(--color-paper) 30%, transparent);
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2xs);
+  margin: 0;
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: var(--tracking-caps);
+  text-transform: uppercase;
+  color: var(--color-clay-text);
+}
+
+.eyebrow::before {
+  content: "";
+  width: 1.75rem;
+  height: 1px;
+  background: currentColor;
+}
+
+.section-head {
+  display: grid;
+  gap: var(--space-m);
+  grid-template-columns: minmax(0, 1fr);
+  align-items: end;
+  margin-block-end: var(--space-xl);
+}
+
+@media (width >= 62rem) {
+  .section-head {
+    grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+    gap: var(--space-xl);
+  }
+}
+
+.section-head__title {
+  font-size: var(--text-h2);
+}
+
+.section-head__title em {
+  font-style: italic;
+  color: var(--color-pine);
+}
+
+.section-head__aside {
+  max-width: 40ch;
+  color: var(--color-ink-soft);
+}
+
+.section--ink .section-head__aside {
+  color: color-mix(in oklch, var(--color-paper) 74%, transparent);
+}
+
+.section-head__rule {
+  grid-column: 1 / -1;
+  height: 1px;
+  background: var(--rule);
+  margin-block-start: var(--space-s);
+}
+
+.lead {
+  font-size: var(--text-lead);
+  line-height: 1.5;
+  max-width: var(--measure);
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2xs);
+  /* 44px — минимум для пальца. Кнопки в шапке мельче по типографике,
+     но зона нажатия у них такая же. */
+  min-height: 44px;
+  padding: 0.85em 1.6em;
+  border: 1px solid transparent;
+  border-radius: var(--radius-pill);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform var(--duration-fast) var(--ease-soft),
+    background-color var(--duration-fast) var(--ease-soft),
+    color var(--duration-fast) var(--ease-soft),
+    border-color var(--duration-fast) var(--ease-soft),
+    box-shadow var(--duration-normal) var(--ease-soft);
+}
+
+.btn__arrow {
+  transition: transform var(--duration-normal) var(--ease-out-expo);
+}
+
+.btn:hover .btn__arrow,
+.btn:focus-visible .btn__arrow {
+  transform: translateX(4px);
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn--primary {
+  background: var(--color-pine);
+  color: var(--color-paper);
+  box-shadow: var(--shadow-soft);
+}
+
+.btn--primary:hover {
+  background: var(--color-ink);
+  box-shadow: var(--shadow-lift);
+}
+
+.btn--ghost {
+  border-color: var(--rule-strong);
+  color: inherit;
+}
+
+.btn--ghost:hover {
+  border-color: currentColor;
+  background: color-mix(in oklch, currentColor 7%, transparent);
+}
+
+/* Scroll reveal — only armed once main.js has flagged the document,
+   so a JS failure can never leave the page invisible. */
+.js .reveal {
+  opacity: 0;
+  transform: translateY(1.5rem);
+  transition: opacity var(--duration-slow) var(--ease-out-expo),
+    transform var(--duration-slow) var(--ease-out-expo);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+.js .reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .js .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}

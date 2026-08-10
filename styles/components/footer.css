@@ -1,0 +1,150 @@
+/* Contact block + footer */
+
+/* Закрывающая секция: своя атмосфера, чтобы финал не растворялся
+   в той же бумаге, что и вся страница. Не второй ink — он уже занят
+   расписанием, — а хвойная дымка с хребтом по нижнему краю. */
+.section--closing {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border-block-start: 1px solid var(--rule);
+  padding-block: clamp(3rem, 2rem + 3vw, 5.5rem) clamp(8rem, 6rem + 9vw, 14rem);
+  background: linear-gradient(
+    180deg,
+    var(--color-paper) 0%,
+    color-mix(in oklch, var(--color-pine) 7%, var(--color-paper)) 45%,
+    color-mix(in oklch, var(--color-pine) 15%, var(--color-paper)) 100%
+  );
+}
+
+.ridge--closing {
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  z-index: -1;
+  margin-block-start: 0;
+  height: clamp(6rem, 4rem + 8vw, 11rem);
+}
+
+.ridge--closing .ridge__layer--far {
+  fill: color-mix(in oklch, var(--color-pine) 16%, var(--color-paper));
+}
+
+.ridge--closing .ridge__layer--mid {
+  fill: color-mix(in oklch, var(--color-pine) 26%, var(--color-paper));
+}
+
+.contact {
+  display: grid;
+  gap: var(--space-l);
+  align-items: center;
+}
+
+@media (width >= 62rem) {
+  .contact {
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+    gap: var(--space-xl);
+  }
+}
+
+.contact__title {
+  font-size: var(--text-h2);
+}
+
+.contact__title em {
+  font-style: italic;
+  color: var(--color-pine);
+}
+
+.channels {
+  display: grid;
+  gap: var(--space-xs);
+}
+
+.channel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-m);
+  padding: var(--space-m);
+  background: var(--surface-raise);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-card);
+  text-decoration: none;
+  transition: transform var(--duration-normal) var(--ease-out-expo),
+    border-color var(--duration-fast) var(--ease-soft),
+    background-color var(--duration-fast) var(--ease-soft);
+}
+
+.channel:hover,
+.channel:focus-visible {
+  transform: translateX(6px);
+  border-color: var(--color-pine);
+  background: color-mix(in oklch, var(--color-pine) 6%, var(--surface-raise));
+}
+
+.channel__label {
+  display: block;
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-caps);
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+
+.channel__value {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+}
+
+.channel__arrow {
+  color: var(--color-clay);
+  transition: transform var(--duration-normal) var(--ease-out-expo);
+}
+
+.channel:hover .channel__arrow {
+  transform: translateX(4px);
+}
+
+/* Подхватывает нижний тон закрывающей секции, чтобы страница
+   заканчивалась одним куском, а не полоской бумаги под хребтом. */
+.site-footer {
+  background: color-mix(in oklch, var(--color-pine) 15%, var(--color-paper));
+  padding-block: var(--space-m);
+}
+
+.site-footer__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-s) var(--space-m);
+  font-size: var(--text-sm);
+  /* Тон футера стал темнее — текст догоняем, чтобы держать 4.5:1 */
+  color: var(--color-ink-soft);
+}
+
+.site-footer__copy {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2xs);
+}
+
+.site-footer__mark {
+  width: 1.5rem;
+  height: auto;
+  border-radius: 50%;
+  opacity: 0.85;
+}
+
+.site-footer__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-s);
+}
+
+.site-footer__links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding-inline: var(--space-2xs);
+}

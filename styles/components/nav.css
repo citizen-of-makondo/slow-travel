@@ -1,0 +1,164 @@
+/* Site header — thin editorial masthead that condenses on scroll */
+
+.masthead {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  isolation: isolate;
+  background: color-mix(in oklch, var(--color-paper) 82%, transparent);
+  backdrop-filter: blur(14px) saturate(1.2);
+  border-block-end: 1px solid transparent;
+  transition: border-color var(--duration-normal) var(--ease-soft),
+    background-color var(--duration-normal) var(--ease-soft);
+}
+
+.masthead.is-stuck {
+  border-block-end-color: var(--rule);
+  background: color-mix(in oklch, var(--color-paper) 94%, transparent);
+}
+
+.masthead__inner {
+  /* Контент шапки поверх улитки: она проползает под названиями пунктов */
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2xs) var(--space-m);
+  /* На мобильном строк две, поэтому шапка дышит меньше: рост зон нажатия
+     компенсируем уменьшением собственных отступов. */
+  padding-block: var(--space-2xs);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  gap: 0.6ch;
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+}
+
+.brand__logo {
+  width: clamp(1.75rem, 1.4rem + 1vw, 2.25rem);
+  height: auto;
+  border-radius: 50%;
+  margin-inline-end: 0.2ch;
+  box-shadow: 0 0 0 1px color-mix(in oklch, var(--color-clay) 30%, transparent);
+  transition: transform var(--duration-normal) var(--ease-out-expo);
+}
+
+.brand:hover .brand__logo,
+.brand:focus-visible .brand__logo {
+  transform: rotate(-8deg) scale(1.06);
+}
+
+.brand__mark {
+  font-style: italic;
+  color: var(--color-pine);
+}
+
+.brand__tag {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-caps);
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+
+/* Under 56rem the nav drops to its own scrollable row instead of a hamburger:
+   four short links fit, and no JS is needed to open anything. */
+.nav {
+  order: 3;
+  width: 100%;
+  overflow-x: auto;
+  scrollbar-width: none;
+  border-block-start: 1px solid var(--rule);
+}
+
+.nav::-webkit-scrollbar {
+  display: none;
+}
+
+.nav__list {
+  display: flex;
+  align-items: center;
+  gap: clamp(1rem, 0.4rem + 1.6vw, 2.25rem);
+}
+
+.nav__link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-size: var(--text-sm);
+  font-weight: 500;
+  text-decoration: none;
+  color: var(--color-ink-soft);
+  transition: color var(--duration-fast) var(--ease-soft);
+}
+
+.nav__link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: calc(50% - 1.05em);
+  width: 100%;
+  height: 1px;
+  background: var(--color-clay);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform var(--duration-normal) var(--ease-out-expo);
+}
+
+.nav__link:hover,
+.nav__link:focus-visible {
+  color: var(--color-ink);
+}
+
+.nav__link:hover::after,
+.nav__link:focus-visible::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.masthead__cta {
+  padding: 0.6em 1.1em;
+  font-size: var(--text-xs);
+}
+
+.masthead__cta-long {
+  display: none;
+}
+
+@media (width < 26rem) {
+  .brand__tag {
+    display: none;
+  }
+}
+
+@media (width >= 56rem) {
+  .masthead__inner {
+    flex-wrap: nowrap;
+    padding-block: var(--space-2xs);
+  }
+
+  .nav {
+    order: 0;
+    width: auto;
+    overflow: visible;
+    border-block-start: 0;
+  }
+
+  .masthead__cta {
+    padding: 0.85em 1.6em;
+    font-size: var(--text-sm);
+  }
+
+  .masthead__cta-long {
+    display: inline;
+  }
+}

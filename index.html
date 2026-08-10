@@ -1,0 +1,618 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Slow Travel — авторские туры по Балканам</title>
+    <meta
+      name="description"
+      content="Алексей и Лариса живут в Сербии и водят маленькие группы по Балканам: Сербия, Черногория, Босния и Герцеговина, а также Марокко и Грузия. Медленные авторские туры со вкусом."
+    />
+    <meta name="theme-color" content="#f2ece0" />
+    <link rel="canonical" href="https://citizen-of-makondo.github.io/slow-travel/" />
+
+    <link rel="icon" href="assets/logo/favicon-32.png" sizes="32x32" type="image/png" />
+    <link rel="icon" href="assets/logo/logo-192.png" sizes="192x192" type="image/png" />
+    <link rel="apple-touch-icon" href="assets/logo/apple-touch-icon.png" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Slow Travel — авторские туры по Балканам" />
+    <meta
+      property="og:description"
+      content="Маленькие группы, горные дороги, кофе в джезве. Балканы так, как их показывают друзьям."
+    />
+    <meta property="og:locale" content="ru_RU" />
+    <meta property="og:url" content="https://citizen-of-makondo.github.io/slow-travel/" />
+    <meta
+      property="og:image"
+      content="https://citizen-of-makondo.github.io/slow-travel/assets/logo/logo-320.jpg"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/layout.css" />
+    <link rel="stylesheet" href="styles/components/nav.css" />
+    <link rel="stylesheet" href="styles/components/hero.css" />
+    <link rel="stylesheet" href="styles/components/crawler.css" />
+    <link rel="stylesheet" href="styles/components/about.css" />
+    <link rel="stylesheet" href="styles/components/tours.css" />
+    <link rel="stylesheet" href="styles/components/journal.css" />
+    <link rel="stylesheet" href="styles/components/footer.css" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "TravelAgency",
+        "name": "Slow Travel",
+        "description": "Авторские туры по Сербии, Черногории, Боснии и Герцеговине и не только.",
+        "areaServed": [
+          "Сербия",
+          "Черногория",
+          "Босния и Герцеговина",
+          "Марокко",
+          "Грузия"
+        ],
+        "sameAs": [
+          "https://t.me/slowtour",
+          "https://www.instagram.com/_slow_travel",
+          "https://www.threads.com/@_slow_travel"
+        ]
+      }
+    </script>
+
+    <script src="scripts/main.js" defer></script>
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main">К основному содержанию</a>
+
+    <header class="masthead" id="masthead">
+      <!-- Улитка ползёт по нижней кромке шапки. Шапка липкая, значит
+           улитка видна на любой прокрутке. Пять минут на один проход. -->
+      <div class="crawler" aria-hidden="true">
+        <div class="crawler__trail"></div>
+        <div class="crawler__snail">
+          <svg viewBox="0 0 64 40" class="crawler__svg">
+            <g
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <!-- нога с головой -->
+              <path
+                d="M7 34c-1.8 0-2.6-1.6-1.4-3C8 28 13 26.4 19 26.4h9c7 0 12.4 2.2 15 5.2 1.4 1.6 1 2.4-1 2.4z"
+              />
+              <!-- рожки -->
+              <path d="M38.6 27.8l5.2-8.4M41.4 29.8l8.6-5" />
+              <circle cx="44.6" cy="18.4" r="1.4" fill="currentColor" stroke="none" />
+              <circle cx="50.8" cy="24.2" r="1.4" fill="currentColor" stroke="none" />
+              <!-- раковина: спираль из полуокружностей -->
+              <path
+                d="M22 17a2 2 0 0 1 4 0a3 3 0 0 1-6 0a4.5 4.5 0 0 1 9 0a6 6 0 0 1-12 0a8 8 0 0 1 16 0a10 10 0 0 1-20 0"
+              />
+            </g>
+          </svg>
+        </div>
+      </div>
+
+      <div class="shell masthead__inner">
+        <a class="brand" href="#top">
+          <img
+            class="brand__logo"
+            src="assets/logo/logo-96.png"
+            alt=""
+            width="96"
+            height="96"
+            decoding="async"
+          />
+          <span>Slow<span class="brand__mark"> Travel</span></span>
+          <span class="brand__tag">Балканы</span>
+        </a>
+
+        <nav class="nav" aria-label="Основная навигация">
+          <ul class="nav__list">
+            <li><a class="nav__link" href="#about">Кто мы</a></li>
+            <li><a class="nav__link" href="#tours">Туры</a></li>
+            <li><a class="nav__link" href="#journal">Журнал</a></li>
+            <li><a class="nav__link" href="#contact">Связаться</a></li>
+          </ul>
+        </nav>
+
+        <a class="btn btn--primary masthead__cta" href="https://t.me/slowtour" rel="noopener">
+          <span><span class="masthead__cta-long">Канал в </span>Telegram</span>
+          <span class="btn__arrow" aria-hidden="true">→</span>
+        </a>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero" id="top" aria-labelledby="hero-heading">
+        <div class="shell hero__inner">
+          <div class="hero__kicker">
+            <p class="hero__where">
+              Сербия · Черногория · Босния и Герцеговина · Марокко · Грузия
+            </p>
+            <p class="hero__where">Авторские туры небольшими группами</p>
+          </div>
+
+          <h1 class="hero__title" id="hero-heading">
+            <span>Путешествуем</span>
+            <span class="indent"><em>со вкусом</em></span>
+            <span>по Балканам</span>
+          </h1>
+
+          <div class="hero__body">
+            <dl class="hero__stats">
+              <div class="hero__stat"><dt>5100</dt><dd>читателей канала</dd></div>
+              <div class="hero__stat"><dt>4</dt><dd>ближайших маршрута</dd></div>
+              <div class="hero__stat"><dt>8–12</dt><dd>человек в группе</dd></div>
+            </dl>
+
+            <div>
+              <p class="lead">
+                Мы живём в Сербии и показываем Балканы так, как показывали бы друзьям:
+                горные дороги без спешки, кофе в джезве в старой кафане, сыр с рынка,
+                крепости, реки и споменики, о которых не пишут в путеводителях.
+              </p>
+              <div class="hero__actions">
+                <a class="btn btn--primary" href="#tours">
+                  Смотреть маршруты
+                  <span class="btn__arrow" aria-hidden="true">→</span>
+                </a>
+                <a class="btn btn--ghost" href="#about">Кто мы такие</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <svg
+          class="ridge"
+          viewBox="0 0 1200 320"
+          preserveAspectRatio="none"
+          role="img"
+          aria-label="Силуэт балканских гор"
+        >
+          <circle class="ridge__sun" cx="880" cy="108" r="42" />
+          <path
+            class="ridge__layer ridge__layer--far"
+            d="M0,240 L120,180 L220,215 L340,140 L460,205 L580,150 L700,210 L820,160 L960,220 L1080,175 L1200,230 L1200,320 L0,320 Z"
+          />
+          <path
+            class="ridge__layer ridge__layer--mid"
+            d="M0,270 L150,215 L270,255 L400,195 L520,250 L660,200 L780,255 L900,210 L1040,260 L1150,225 L1200,255 L1200,320 L0,320 Z"
+          />
+          <path
+            class="ridge__layer ridge__layer--near"
+            d="M0,300 L100,275 L230,300 L360,265 L500,295 L640,262 L790,298 L930,270 L1070,300 L1200,278 L1200,320 L0,320 Z"
+          />
+        </svg>
+      </section>
+
+      <div class="strip" aria-hidden="true">
+        <div class="strip__track">
+          <span class="strip__item">Копаоник</span>
+          <span class="strip__item">Проклетие</span>
+          <span class="strip__item">Сараево</span>
+          <span class="strip__item">Нови-Пазар</span>
+          <span class="strip__item">Джердап</span>
+          <span class="strip__item">Скадарское озеро</span>
+          <span class="strip__item">Яйце</span>
+          <span class="strip__item">Ульцинь</span>
+          <span class="strip__item">Травник</span>
+          <span class="strip__item">Голубац</span>
+          <span class="strip__item">Копаоник</span>
+          <span class="strip__item">Проклетие</span>
+          <span class="strip__item">Сараево</span>
+          <span class="strip__item">Нови-Пазар</span>
+          <span class="strip__item">Джердап</span>
+          <span class="strip__item">Скадарское озеро</span>
+          <span class="strip__item">Яйце</span>
+          <span class="strip__item">Ульцинь</span>
+          <span class="strip__item">Травник</span>
+          <span class="strip__item">Голубац</span>
+        </div>
+      </div>
+
+      <section class="section" id="about" aria-labelledby="about-heading">
+        <div class="shell">
+          <div class="section-head reveal">
+            <div>
+              <p class="eyebrow">Кто мы</p>
+              <h2 class="section-head__title" id="about-heading">
+                Алексей и Лариса,<br />и <em>любовь к Балканам</em>
+              </h2>
+            </div>
+            <p class="section-head__aside">
+              Мы не турагентство. Мы соседи, которые знают, где в этой долине варят
+              лучший кофе, — и зовут вас с собой.
+            </p>
+            <div class="section-head__rule"></div>
+          </div>
+
+          <div class="about">
+            <figure class="about__media reveal">
+              <div class="about__frame">
+                <img
+                  src="assets/photos/aleksey-larisa.jpg"
+                  alt="Алексей и Лариса на набережной Которского залива"
+                  width="600"
+                  height="750"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <div class="about__placeholder">
+                  <span>Место для фото</span>
+                  <span>assets/photos/</span>
+                </div>
+              </div>
+              <figcaption class="about__caption">
+                <strong>Алексей и Лариса</strong>
+                Живём в Сербии, водим группы по Балканам с 💚
+              </figcaption>
+            </figure>
+
+            <div class="about__text reveal" style="--reveal-delay: 120ms">
+              <p class="lead">
+                Привет! Мы — Алексей и Лариса, живём в Сербии, обожаем Балканы: людей,
+                природу, кухню. И знакомим наших путешественников с прекрасными Балканами 💚
+              </p>
+              <p>
+                За несколько лет мы проехали эти горы вдоль и поперёк: от изумрудных рек
+                Боснии до пляжей Ульциня, от османских базаров Нови-Пазара до футуристичных
+                спомеников, которые выглядят как декорации к фильмам о далёких галактиках.
+              </p>
+              <blockquote class="pullquote">
+                Вкусно — это не только про еду. Это про темп, разговоры и дорогу,
+                на которой не хочется смотреть на часы.
+              </blockquote>
+              <p>
+                Каждый маршрут мы собираем сами и сами же его ведём. Никаких автобусов
+                на пятьдесят человек, флажков и «десять минут на фото».
+              </p>
+            </div>
+          </div>
+
+          <ul class="principles">
+            <li class="principle reveal">
+              <span class="principle__num">01</span>
+              <h3 class="principle__title">Медленно</h3>
+              <p class="principle__text">
+                Не десять городов за неделю. Лучше один перевал, но с остановкой у реки
+                и обедом там, где едят местные.
+              </p>
+            </li>
+            <li class="principle reveal" style="--reveal-delay: 80ms">
+              <span class="principle__num">02</span>
+              <h3 class="principle__title">По-местному</h3>
+              <p class="principle__text">
+                Кафаны вместо ресторанов при отелях, рынки, домашние сыры и вино
+                у хозяина погреба.
+              </p>
+            </li>
+            <li class="principle reveal" style="--reveal-delay: 160ms">
+              <span class="principle__num">03</span>
+              <h3 class="principle__title">Малой группой</h3>
+              <p class="principle__text">
+                8–12 человек. Помещаемся за один стол, слышим друг друга и умеем
+                менять план из-за красивого света.
+              </p>
+            </li>
+            <li class="principle reveal" style="--reveal-delay: 240ms">
+              <span class="principle__num">04</span>
+              <h3 class="principle__title">Вглубь</h3>
+              <p class="principle__text">
+                Крепости, монастыри, каньоны и споменики — Балканы, которые не помещаются
+                в стандартный путеводитель.
+              </p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section section--ink" id="tours" aria-labelledby="tours-heading">
+        <div class="shell">
+          <div class="section-head reveal">
+            <div>
+              <p class="eyebrow">Ближайшие маршруты</p>
+              <h2 class="section-head__title" id="tours-heading">
+                Расписание <em>2026</em>
+              </h2>
+            </div>
+            <p class="section-head__aside">
+              Места ограничены составом группы. Бронь и вопросы — в Telegram,
+              отвечает Лариса.
+            </p>
+            <div class="section-head__rule"></div>
+          </div>
+
+          <ul class="tours">
+            <li class="tour reveal">
+              <span class="tour__index" aria-hidden="true">01</span>
+              <div class="tour__media">
+                <img
+                  src="assets/photos/tour-montenegro.jpg"
+                  alt="Скалистые пики национального парка Проклетие"
+                  width="480"
+                  height="320"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <h3 class="tour__title">
+                <a href="https://t.me/slowtour/2390" rel="noopener">Черногория</a>
+                <span class="tour__dates">31 августа — 6 сентября</span>
+              </h3>
+              <p class="tour__detail">
+                Национальный парк Проклетие, пляжи Ульциня и Скадарское озеро.
+                Горы, море и вода одного маршрута.
+              </p>
+              <span class="tour__status" data-status="none">Мест нет</span>
+            </li>
+
+            <li class="tour reveal" style="--reveal-delay: 80ms">
+              <span class="tour__index" aria-hidden="true">02</span>
+              <div class="tour__media">
+                <img
+                  src="assets/photos/tour-bosnia.jpg"
+                  alt="Деревянный фонтан Себиль на Башчаршии в вечернем Сараево"
+                  width="480"
+                  height="320"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <h3 class="tour__title">
+                <a href="https://t.me/slowtour/2444" rel="noopener">Босния и Герцеговина</a>
+                <span class="tour__dates">17 — 20 сентября</span>
+              </h3>
+              <p class="tour__detail">
+                Сараево, крепости Яйце и Травника, изумрудные реки и джип-сафари
+                по горным дорогам.
+              </p>
+              <span class="tour__status" data-status="few">Осталось 3 места</span>
+            </li>
+
+            <li class="tour reveal" style="--reveal-delay: 160ms">
+              <span class="tour__index" aria-hidden="true">03</span>
+              <div class="tour__media">
+                <img
+                  src="assets/photos/tour-djerdap.jpg"
+                  alt="Башни крепости Голубац над Дунаем"
+                  width="480"
+                  height="320"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <h3 class="tour__title">
+                <a href="https://t.me/slowtour/2196" rel="noopener">Джердап, Сербия</a>
+                <span class="tour__dates">26 сентября · выходные</span>
+              </h3>
+              <p class="tour__detail">
+                Крепость Голубац, круиз по Дунаю и самый высокий наскальный памятник
+                Европы.
+              </p>
+              <span class="tour__status" data-status="open">Есть места</span>
+            </li>
+
+            <li class="tour reveal" style="--reveal-delay: 240ms">
+              <span class="tour__index" aria-hidden="true">04</span>
+              <div class="tour__media">
+                <img
+                  src="assets/photos/tour-morocco.jpg"
+                  alt="Мечеть Хассана II на берегу океана на закате"
+                  width="480"
+                  height="320"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <h3 class="tour__title">
+                <a href="https://t.me/slowtour/2312" rel="noopener">Марокко</a>
+                <span class="tour__dates">1 — 11 ноября</span>
+              </h3>
+              <p class="tour__detail">
+                Медины Феса, сады Марракеша и Сахара. Не Балканы — но по тем же
+                правилам: медленно и со вкусом.
+              </p>
+              <span class="tour__status" data-status="few">Осталось 2 места</span>
+            </li>
+          </ul>
+
+          <div class="tours__note">
+            <p>
+              В октябре — короткие маршруты по Сербии на выходные. Даты объявим
+              в канале.
+            </p>
+            <a class="btn btn--ghost" href="https://t.me/slowtour" rel="noopener">
+              Забронировать место
+              <span class="btn__arrow" aria-hidden="true">→</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="section section--tight section--flush-end"
+        id="journal"
+        aria-labelledby="journal-heading"
+      >
+        <div class="shell">
+          <div class="section-head reveal">
+            <div>
+              <p class="eyebrow">Журнал</p>
+              <h2 class="section-head__title" id="journal-heading">
+                Что мы <em>рассказываем</em> по дороге
+              </h2>
+            </div>
+            <p class="section-head__aside">
+              Заметки из поездок — то же, что мы пишем в Threads и Telegram.
+            </p>
+            <div class="section-head__rule"></div>
+          </div>
+
+          <div class="journal">
+            <article class="journal__entry reveal">
+              <div class="journal__meta">
+                <span class="journal__tag">Сербия</span>
+                <time datetime="2026-08-09">9 августа</time>
+              </div>
+              <h3 class="journal__title">Побег от жары на Копаоник</h3>
+              <p class="journal__text">
+                Вечером +14, днём не выше +23. И море черники. Чистые горные реки,
+                водопады, густые еловые леса. А воздух хоть ложкой ешь.
+              </p>
+              <a
+                class="journal__link"
+                href="https://www.threads.com/@_slow_travel/post/DbzhspZiKP0"
+                rel="noopener"
+              >
+                Читать в Threads →
+              </a>
+            </article>
+
+            <article class="journal__entry reveal" style="--reveal-delay: 100ms">
+              <div class="journal__meta">
+                <span class="journal__tag">Архитектура</span>
+                <time datetime="2026-08-05">5 августа</time>
+              </div>
+              <h3 class="journal__title">Споменики: мемориалы с другой планеты</h3>
+              <p class="journal__text">
+                Пока весь мир ставил классические памятники с вождями и солдатами,
+                здесь строили футуристичные объекты: крылья, цветы, звёзды. Мы включаем
+                их в маршруты.
+              </p>
+              <a
+                class="journal__link"
+                href="https://www.threads.com/@_slow_travel/post/Dbp48CqCF2M"
+                rel="noopener"
+              >
+                Читать в Threads →
+              </a>
+            </article>
+
+            <article class="journal__entry reveal" style="--reveal-delay: 200ms">
+              <div class="journal__meta">
+                <span class="journal__tag">Нови-Пазар</span>
+                <time datetime="2026-08-01">1 августа</time>
+              </div>
+              <h3 class="journal__title">Телепорт на Восток посреди Сербии</h3>
+              <p class="journal__text">
+                Шумный базар, деревянный фонтан, кофе в джезве и чай по-турецки.
+                Мечеть XVI века, старейший православный храм Сербии и развалины
+                первой столицы из списка ЮНЕСКО.
+              </p>
+              <a
+                class="journal__link"
+                href="https://www.threads.com/@_slow_travel/post/Dbfx9r5iO9a"
+                rel="noopener"
+              >
+                Читать в Threads →
+              </a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="section section--closing"
+        id="contact"
+        aria-labelledby="contact-heading"
+      >
+        <div class="shell contact">
+          <div class="reveal">
+            <p class="eyebrow">Связаться</p>
+            <h2 class="contact__title" id="contact-heading">
+              Поедем <em>вместе</em>?
+            </h2>
+            <p class="lead" style="margin-block-start: var(--space-m)">
+              Напишите — расскажем про маршрут, уровень сложности, жильё и что взять
+              с собой. Без скриптов и менеджеров: отвечаем мы сами.
+            </p>
+          </div>
+
+          <div class="channels reveal" style="--reveal-delay: 120ms">
+            <a class="channel" href="https://t.me/slowtour" rel="noopener">
+              <span>
+                <span class="channel__label">Канал · 5100 читателей</span>
+                <span class="channel__value">@slowtour</span>
+              </span>
+              <span class="channel__arrow" aria-hidden="true">→</span>
+            </a>
+            <a class="channel" href="https://t.me/lbuzunova" rel="noopener">
+              <span>
+                <span class="channel__label">Написать напрямую · Лариса</span>
+                <span class="channel__value">@lbuzunova</span>
+              </span>
+              <span class="channel__arrow" aria-hidden="true">→</span>
+            </a>
+            <a class="channel" href="https://www.instagram.com/_slow_travel" rel="noopener">
+              <span>
+                <span class="channel__label">Фото из поездок</span>
+                <span class="channel__value">Instagram</span>
+              </span>
+              <span class="channel__arrow" aria-hidden="true">→</span>
+            </a>
+            <a class="channel" href="https://www.threads.com/@_slow_travel" rel="noopener">
+              <span>
+                <span class="channel__label">Заметки с дороги</span>
+                <span class="channel__value">Threads</span>
+              </span>
+              <span class="channel__arrow" aria-hidden="true">→</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Тот же хребет, что открывал страницу, — только приглушённый.
+             Страница закрывается тем же, чем началась. -->
+        <svg
+          class="ridge ridge--closing"
+          viewBox="0 0 1200 320"
+          preserveAspectRatio="none"
+          aria-hidden="true"
+          focusable="false"
+        >
+          <path
+            class="ridge__layer ridge__layer--far"
+            d="M0,240 L120,180 L220,215 L340,140 L460,205 L580,150 L700,210 L820,160 L960,220 L1080,175 L1200,230 L1200,320 L0,320 Z"
+          />
+          <path
+            class="ridge__layer ridge__layer--mid"
+            d="M0,270 L150,215 L270,255 L400,195 L520,250 L660,200 L780,255 L900,210 L1040,260 L1150,225 L1200,255 L1200,320 L0,320 Z"
+          />
+        </svg>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell site-footer__inner">
+        <p class="site-footer__copy">
+          <img
+            class="site-footer__mark"
+            src="assets/logo/logo-96.png"
+            alt=""
+            width="96"
+            height="96"
+            loading="lazy"
+            decoding="async"
+          />
+          © <span data-current-year>2026</span> Slow Travel · Сербия
+        </p>
+        <nav class="site-footer__links" aria-label="Соцсети">
+          <a href="https://t.me/slowtour" rel="noopener">Telegram</a>
+          <a href="https://www.instagram.com/_slow_travel" rel="noopener">Instagram</a>
+          <a href="https://www.threads.com/@_slow_travel" rel="noopener">Threads</a>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>
