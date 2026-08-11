@@ -37,6 +37,15 @@
   background: color-mix(in oklch, var(--color-paper) 12%, transparent);
 }
 
+/* Новый тур появился, фото ещё не подобрали — вместо дыры мягкая заливка */
+.tour__media--empty {
+  background: linear-gradient(
+    150deg,
+    color-mix(in oklch, var(--color-pine) 45%, var(--color-ink)),
+    color-mix(in oklch, var(--color-gold) 30%, var(--color-ink))
+  );
+}
+
 .tour__media img {
   width: 100%;
   height: 100%;

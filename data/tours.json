@@ -1,0 +1,46 @@
+[
+  {
+    "slug": "montenegro",
+    "title": "Черногория",
+    "dates": "31 августа — 6 сентября",
+    "summary": "Национальный парк Проклетие, пляжи Ульциня и Скадарское озеро. Горы, море и вода одного маршрута.",
+    "status": "none",
+    "statusLabel": "Мест нет",
+    "post": "https://t.me/slowtour/2390",
+    "photo": "assets/photos/tour-montenegro.jpg",
+    "photoAlt": "Скалистые пики национального парка Проклетие"
+  },
+  {
+    "slug": "bosnia",
+    "title": "Босния и Герцеговина",
+    "dates": "17 — 20 сентября",
+    "summary": "Сараево, крепости Яйце и Травника, изумрудные реки и джип-сафари по горным дорогам.",
+    "status": "few",
+    "statusLabel": "Осталось 3 места",
+    "post": "https://t.me/slowtour/2444",
+    "photo": "assets/photos/tour-bosnia.jpg",
+    "photoAlt": "Деревянный фонтан Себиль на Башчаршии в вечернем Сараево"
+  },
+  {
+    "slug": "djerdap",
+    "title": "Джердап, Сербия",
+    "dates": "26 сентября · выходные",
+    "summary": "Крепость Голубац, круиз по Дунаю и самый высокий наскальный памятник Европы.",
+    "status": "open",
+    "statusLabel": "Есть места",
+    "post": "https://t.me/slowtour/2196",
+    "photo": "assets/photos/tour-djerdap.jpg",
+    "photoAlt": "Башни крепости Голубац над Дунаем"
+  },
+  {
+    "slug": "morocco",
+    "title": "Марокко",
+    "dates": "1 — 11 ноября",
+    "summary": "Медины Феса, сады Марракеша и Сахара. Не Балканы — но по тем же правилам: медленно и со вкусом.",
+    "status": "few",
+    "statusLabel": "Осталось 2 места",
+    "post": "https://t.me/slowtour/2312",
+    "photo": "assets/photos/tour-morocco.jpg",
+    "photoAlt": "Мечеть Хассана II на берегу океана на закате"
+  }
+]
