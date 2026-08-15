@@ -40,8 +40,8 @@
     "status": "open",
     "statusLabel": "Есть места",
     "post": "https://t.me/slowtour/2501",
-    "photo": null,
-    "photoAlt": null
+    "photo": "assets/photos/tour-kovacica-vrsac.jpg",
+    "photoAlt": "Готический собор Вршаца с двумя шпилями над черепичными крышами, за ним холм"
   },
   {
     "slug": "morocco",
