@@ -20,6 +20,7 @@ const SLUG = /^[a-z0-9-]+$/;
 const ISO_DATE = /^\d{4}-\d{2}-\d{2}$/;
 
 const MAX_TOURS = 12;
+const MAX_PRICE_LEN = 24;
 const MAX_ENTRIES = 6;
 const REVEAL_STEP_MS = 80;
 const JOURNAL_REVEAL_STEP_MS = 100;
@@ -77,6 +78,21 @@ async function validateTours(tours) {
       fail(`${at}: файла ${tour.photo} нет в репозитории`);
     }
     if (tour.photo && !tour.photoAlt?.trim()) fail(`${at}: у фото нет photoAlt`);
+
+    // Машинная дата окончания: по ней сортируются туры и вычисляются прошедшие.
+    // Строка dates остаётся человеческой и на порядок не влияет.
+    if (!ISO_DATE.test(tour.endsOn ?? '')) fail(`${at}: endsOn должна быть YYYY-MM-DD`);
+    if (Number.isNaN(Date.parse(tour.endsOn))) fail(`${at}: несуществующая endsOn`);
+
+    if (tour.price !== undefined && tour.price !== null) {
+      if (!String(tour.price).trim()) fail(`${at}: price пустой — уберите поле или заполните`);
+      if (String(tour.price).length > MAX_PRICE_LEN) fail(`${at}: price длиннее ${MAX_PRICE_LEN} символов`);
+    }
+  }
+
+  const past = tours.filter((t) => t.endsOn < new Date().toISOString().slice(0, 10));
+  for (const tour of past) {
+    console.warn(`внимание: тур ${tour.slug} закончился ${tour.endsOn} — его пора убрать из tours.json`);
   }
 }
 
@@ -123,7 +139,11 @@ function renderTour(tour, index) {
                   data-umami-event="tour-${escapeHtml(tour.slug)}"
                   >${escapeHtml(tour.title)}</a
                 >
-                <span class="tour__dates">${escapeHtml(tour.dates)}</span>
+                <span class="tour__dates"
+                  >${escapeHtml(tour.dates)}${
+                    tour.price ? ` <span class="tour__price">· ${escapeHtml(tour.price)}</span>` : ''
+                  }</span
+                >
               </h3>
               <p class="tour__detail">${escapeHtml(tour.summary)}</p>
               <span class="tour__status" data-status="${tour.status}">${escapeHtml(tour.statusLabel)}</span>
@@ -169,7 +189,11 @@ await validateTours(tours);
 validateJournal(journal);
 
 const current = await readFile(INDEX, 'utf8');
-let next = replaceBlock(current, 'tours', tours.map(renderTour).join('\n\n'));
+// Порядок на сайте задаёт дата окончания, а не порядок строк в файле —
+// агенту не нужно думать, куда вставить новый тур.
+const ordered = [...tours].sort((a, b) => a.endsOn.localeCompare(b.endsOn));
+
+let next = replaceBlock(current, 'tours', ordered.map(renderTour).join('\n\n'));
 next = replaceBlock(next, 'journal', journal.map(renderEntry).join('\n\n'));
 next = replaceBlock(next, 'tour-count', `              <div class="hero__stat"><dt>${tours.length}</dt><dd>ближайших маршрута</dd></div>`);
 

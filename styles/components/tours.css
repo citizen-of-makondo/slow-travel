@@ -105,6 +105,12 @@
   color: var(--color-gold);
 }
 
+/* Цена стоит в строке дат, но тише её: даты — про «когда», цена — справка */
+.tour__price {
+  color: color-mix(in oklch, var(--color-paper) 62%, transparent);
+  letter-spacing: 0.08em;
+}
+
 .tour__detail {
   color: color-mix(in oklch, var(--color-paper) 72%, transparent);
   font-size: var(--text-sm);
