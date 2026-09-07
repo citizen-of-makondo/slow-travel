@@ -1,18 +1,5 @@
 [
   {
-    "slug": "montenegro",
-    "title": "Черногория",
-    "dates": "31 августа — 6 сентября",
-    "endsOn": "2026-09-06",
-    "price": "870 €",
-    "summary": "Национальный парк Проклетие, пляжи Ульциня и Скадарское озеро. Горы, море и вода одного маршрута.",
-    "status": "none",
-    "statusLabel": "Мест нет",
-    "post": "https://t.me/slowtour/2390",
-    "photo": "assets/photos/tour-montenegro.jpg",
-    "photoAlt": "Скалистые пики национального парка Проклетие"
-  },
-  {
     "slug": "bosnia",
     "title": "Босния и Герцеговина",
     "dates": "17 — 20 сентября",
