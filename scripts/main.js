@@ -11,7 +11,7 @@ const ANALYTICS = {
   websiteId: 'PASTE-UMAMI-WEBSITE-ID',
   scriptSrc: 'https://cloud.umami.is/script.js',
   // Считаем только боевой домен, чтобы локальная разработка не портила статистику
-  domains: 'citizen-of-makondo.github.io'
+  domains: 'slowtravel.world,www.slowtravel.world'
 };
 
 const UUID_PATTERN = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
