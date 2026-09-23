@@ -6,8 +6,8 @@
     "endsOn": "2026-09-26",
     "price": "140 €",
     "summary": "Крепость Голубац, круиз по Дунаю и самый высокий наскальный памятник Европы.",
-    "status": "none",
-    "statusLabel": "Мест нет",
+    "status": "few",
+    "statusLabel": "Осталось 2 места",
     "post": "https://t.me/slowtour/2196",
     "photo": "assets/photos/tour-djerdap.jpg",
     "photoAlt": "Башни крепости Голубац над Дунаем"
