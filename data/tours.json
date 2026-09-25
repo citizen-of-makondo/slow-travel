@@ -6,8 +6,8 @@
     "endsOn": "2026-09-26",
     "price": "140 €",
     "summary": "Крепость Голубац, круиз по Дунаю и самый высокий наскальный памятник Европы.",
-    "status": "few",
-    "statusLabel": "Осталось 2 места",
+    "status": "none",
+    "statusLabel": "Мест нет",
     "post": "https://t.me/slowtour/2196",
     "photo": "assets/photos/tour-djerdap.jpg",
     "photoAlt": "Башни крепости Голубац над Дунаем"
@@ -20,7 +20,7 @@
     "price": "110 €",
     "summary": "Галерея наивного искусства в Ковачице, мастерская скрипичных дел мастера и Вршац с башней XV века. Обед в винном доме среди виноградников.",
     "status": "few",
-    "statusLabel": "Осталось 2 места",
+    "statusLabel": "Осталось 1 место",
     "post": "https://t.me/slowtour/2501",
     "photo": "assets/photos/tour-kovacica-vrsac.jpg",
     "photoAlt": "Готический собор Вршаца с двумя шпилями над черепичными крышами, за ним холм"
