@@ -7,7 +7,7 @@
     "price": "110 €",
     "summary": "Галерея наивного искусства в Ковачице, мастерская скрипичных дел мастера и Вршац с башней XV века. Обед в винном доме среди виноградников.",
     "status": "few",
-    "statusLabel": "Осталось 1 место",
+    "statusLabel": "Осталось 2 места",
     "post": "https://t.me/slowtour/2501",
     "photo": "assets/photos/tour-kovacica-vrsac.jpg",
     "photoAlt": "Готический собор Вршаца с двумя шпилями над черепичными крышами, за ним холм"
@@ -32,8 +32,8 @@
     "endsOn": "2026-11-11",
     "price": "1750 €",
     "summary": "Медины Феса, сады Марракеша и Сахара. Не Балканы — но по тем же правилам: медленно и со вкусом.",
-    "status": "few",
-    "statusLabel": "Осталось 2 места",
+    "status": "none",
+    "statusLabel": "Мест нет",
     "post": "https://t.me/slowtour/2312",
     "photo": "assets/photos/tour-morocco.jpg",
     "photoAlt": "Мечеть Хассана II на берегу океана на закате"
